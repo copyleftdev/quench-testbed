@@ -1,0 +1,15 @@
+groups:
+  - name: todo-api
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_errors_total[5m]) > 0.05
+        for: 5m
+        labels: { severity: critical }
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, http_request_duration_seconds_bucket) > 0.5
+        for: 10m
+        labels: { severity: warning }
+      - alert: PodCrashLooping
+        expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
+        for: 5m
+        labels: { severity: critical }
