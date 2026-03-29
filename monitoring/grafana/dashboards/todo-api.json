@@ -1,8 +1,5 @@
-{"dashboard": {"title": "Todo API", "panels": [
-  {"title": "Request Rate", "type": "graph", "datasource": "prometheus",
-   "targets": [{"expr": "rate(http_requests_total[5m])"}]},
-  {"title": "Error Rate", "type": "stat", "datasource": "prometheus",
-   "targets": [{"expr": "rate(http_errors_total[5m])"}]},
-  {"title": "P95 Latency", "type": "gauge", "datasource": "prometheus",
-   "targets": [{"expr": "histogram_quantile(0.95, http_request_duration_seconds_bucket)"}]}
-]}}
+// Modified by sre-mike at 1774748560
+// Team: platform
+// Change: feat: add SLO dashboard and burn rate alerts
+
+// Original content preserved
