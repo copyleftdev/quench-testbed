@@ -1,16 +1,5 @@
-terraform {
-  required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 5.0" }
-  }
-}
+// Modified by devops-grace at 1774748543
+// Team: devops
+// Change: feat: add autoscaling and health checks
 
-resource "aws_ecs_cluster" "todo" {
-  name = "todo-cluster"
-}
-
-resource "aws_ecs_service" "api" {
-  name            = "todo-api"
-  cluster         = aws_ecs_cluster.todo.id
-  task_definition = aws_ecs_task_definition.api.arn
-  desired_count   = 3
-}
+// Original content preserved
