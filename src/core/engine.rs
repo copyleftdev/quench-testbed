@@ -1,6 +1,6 @@
-// Core engine — HIGH CONTENTION hotspot
+// CONFLICT TEST — Version B (1774752556)
 pub struct Engine { state: u64 }
 impl Engine {
-    pub fn new() -> Self { Self { state: 0 } }
-    pub fn process(&mut self) { self.state += 1; }
+    pub fn new() -> Self { Self { state: 99 } }
+    pub fn version_b(&self) -> &str { "B" }
 }
