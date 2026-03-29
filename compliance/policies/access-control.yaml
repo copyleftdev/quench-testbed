@@ -1,0 +1,17 @@
+policy:
+  name: access-control
+  version: "1.0"
+  standard: SOC2-CC6.3
+  roles:
+    - name: admin
+      permissions: [read, write, delete, manage_users]
+    - name: user
+      permissions: [read, write]
+    - name: auditor
+      permissions: [read, audit_read]
+    - name: compliance_officer
+      permissions: [read, audit_read, compliance_manage]
+  enforcement:
+    mfa_required: true
+    session_timeout_minutes: 30
+    ip_allowlist_enabled: false
