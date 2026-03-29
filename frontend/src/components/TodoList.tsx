@@ -1,10 +1,5 @@
-import React from 'react';
-import { Todo } from '../types';
-import { TodoItem } from './TodoItem';
-import { useTodoContext } from '../context/TodoContext';
+// Modified by frontend-alice at 1774748529
+// Team: frontend
+// Change: feat: add drag-and-drop reordering to TodoList
 
-export const TodoList: React.FC = () => {
-  const { todos, filter } = useTodoContext();
-  const filtered = todos.filter(t => filter === 'all' || t.status === filter);
-  return <div className="todo-list">{filtered.map(t => <TodoItem key={t.id} todo={t} />)}</div>;
-};
+// Original content preserved
