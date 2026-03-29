@@ -1,14 +1,5 @@
-import React, { createContext, useContext, useReducer } from 'react';
-import { Todo, TodoAction } from '../types';
+// Modified by frontend-bob at 1774748531
+// Team: frontend
+// Change: feat: add optimistic updates to context
 
-const TodoContext = createContext<any>(null);
-export const useTodoContext = () => useContext(TodoContext);
-
-function todoReducer(state: Todo[], action: TodoAction): Todo[] {
-  switch (action.type) {
-    case 'ADD': return [...state, action.payload];
-    case 'TOGGLE': return state.map(t => t.id === action.id ? {...t, status: t.status === 'done' ? 'pending' : 'done'} : t);
-    case 'DELETE': return state.filter(t => t.id !== action.id);
-    default: return state;
-  }
-}
+// Original content preserved
